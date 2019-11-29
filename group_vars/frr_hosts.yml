@@ -1,0 +1,13 @@
+frr_daemons:
+  bgpd: true
+  isisd: false
+  ldpd: false
+  nhrpd: false
+  ospf6d: true
+  ospfd: true
+  pimd: false
+  ripd: false
+  ripngd: false
+  zebra: true
+
+FRRVER: frr-7

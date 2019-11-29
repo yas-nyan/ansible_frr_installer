@@ -1,0 +1,30 @@
+- name: add apt key
+  apt_key:
+    url: https://deb.frrouting.org/frr/keys.asc
+    state: present
+
+- name: add apt repo
+  lineinfile:
+    path: /etc/apt/sources.list.d/frr.list
+    line: "deb https://deb.frrouting.org/frr {{ansible_distribution_release}} {{FRRVER}}"
+    state: present
+    create: true
+
+- name: install frr
+  apt:
+    update_cache: true
+    name:
+    - frr
+    - frr-pythontools
+
+- name: config | Configuring daemons
+  template:
+    backup: yes
+    src: etc/frr/daemons.j2
+    dest: /etc/frr/daemons
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  notify:
+    - restart frr
+    - start frr

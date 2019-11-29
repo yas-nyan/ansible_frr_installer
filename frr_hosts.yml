@@ -1,0 +1,5 @@
+- hosts: frr_hosts
+  gather_facts: yes
+  become: true
+  roles:
+    - frr_installer
