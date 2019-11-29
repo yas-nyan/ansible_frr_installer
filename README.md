@@ -43,3 +43,9 @@ frr_tester  ansible_host=192.0.2.1
 ## deploy
 ```
 ansible-playbook -i hosts frr_hosts.yml
+```
+
+
+
+# license
+MIT
