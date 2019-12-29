@@ -23,7 +23,7 @@ frr_daemons:
 FRRVER: frr-7
 ```
 
-[valid `FRRVER` list](https://deb.frrouting.org/https://deb.frrouting.org/)
+[valid `FRRVER` list](https://deb.frrouting.org/)
  
 
 
